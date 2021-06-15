@@ -1,3 +1,12 @@
-<% provide(:title, "") %>
-<h1>健康管理システム</h1>
-<p>このアプリケーションでは、登録されたユーザーの健康情報を閲覧・登録・編集することができます。</p>
+<% provide(:title, "Top") %>
+<div class="center jumbotron">
+  <h1>ガリガリ<br>
+  の為の<br>
+  健康・体重管理システム</h1>
+  <p>このアプリケーションでは、登録されたユーザーの健康情報を閲覧・登録・編集することができます。</p>
+  <img src="https://thumb.ac-illust.com/45/45ac2298c2e478516db43bf175586e3d_w.jpeg">
+  <footer>
+      <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>
+      <%= link_to "Sign in", '#', class: "btn btn-lg btn-primary" %>
+  </footer>
+</div>
