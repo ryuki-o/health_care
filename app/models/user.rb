@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  # Userモデルデータが削除されると、関連するMenuモデルのデータもまとめて削除される
+  has_many :menus, dependent: :destroy
   # 「remember_token」という仮想の属性を作成します。
   attr_accessor :remember_token
   before_save { self.email = email.downcase }

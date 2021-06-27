@@ -2,17 +2,51 @@
 <div>
   <table class="table table-bordered table-condensed user-table">
     <tr>
-      <td>健康管理表</td>
+      <td>【<%= l(@first_day, format: :middle) %>】健康管理表</td>
       <td>平均体重</td>
       <td>累計食数</td>
-      <td>月初日</td>
+      <td>月初日：<%= l(@first_day, format: :short) %></td>
     </tr>
 
     <tr>
       <td>年齢：<%= @user.age %>歳</td>
       <td>名前：<%= @user.name %></td>
       <td>体重：<%= @user.weight %>kg</td>
-      <td>月末日</td>
+      <td>月末日：<%= l(@last_day, format: :short) %></td>
     </tr>
+  </table>
+</div>
+<div class="btn-users-show">
+  <%= link_to "⇦ 前月へ", user_path(date: @first_day.prev_month), class: "btn btn-info" %>
+  <%= link_to "次月へ ⇨", user_path(date: @first_day.next_month), class: "btn btn-info" %>
+</div>
+
+<div>
+  <table class="table table-bordered table-condensed table-hover" id="table-menus">
+    <thead>
+      <tr>
+        <th>日付</th>
+        <th>曜日</th>
+        <th>朝食</th>
+        <th>昼食</th>
+        <th>夜食</th>
+        <th>体重</th>
+        <th>備考</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @menus.each do |day| %>
+        <tr>
+          <td><%= l(day.worked_on, format: :short) %></td>
+          <td><%= $days_of_the_week[day.worked_on.wday] %></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 </div>

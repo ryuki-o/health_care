@@ -11,3 +11,10 @@ ja:
           password_confirmation: パスワード再入力
           created_at: 作成日
           updated_at: 更新日
+        menu:
+          worked_on: 日付
+          breakfast: 朝食
+          lunch: 昼食
+          dinner: 夜食
+          note: 備考
+          user: ユーザーID

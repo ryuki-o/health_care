@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210624093026) do
+ActiveRecord::Schema.define(version: 20210627050453) do
+
+  create_table "menus", force: :cascade do |t|
+    t.string "breakfast"
+    t.string "lunch"
+    t.string "dinner"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "worked_on"
+    t.string "note"
+    t.index ["user_id"], name: "index_menus_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
